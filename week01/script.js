@@ -29,11 +29,11 @@ const resetButton = document.querySelector("#reset")
 
 startButton.addEventListener("click", () => {
   if (!interval) {
-    startButton.textContent = "stop";
+    startButton.textContent = "Stop";
     startButton.style.backgroundColor = "lightcoral";
     startTimer();
   } else {
-    startButton.textContent = "start";
+    startButton.textContent = "Start";
     startButton.style.backgroundColor = "#bbccd0";
     stopTimer();
   }
@@ -43,6 +43,6 @@ resetButton.addEventListener("click", () => {
   stopTimer();
   elapsed = 0;
   updateDisplay();
-  startButton.textContent = "start";
+  startButton.textContent = "Start";
   startButton.style.backgroundColor = "#bbccd0";
 });
