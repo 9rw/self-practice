@@ -8,10 +8,10 @@ function updateDisplay() {
   const mins = String(Math.floor((milliSeconds % 3600000) / 60000)).padStart(2, '0');
   const secs = String(Math.floor((milliSeconds % 60000) / 1000)).padStart(2, '0');
   const ms = String(Math.floor((milliSeconds % 1000) / 10)).padStart(2, '0');
-  document.getElementById("timer").textContent = `${hrs}:${mins}:${secs}.${ms}`;
+  document.getElementById("stopwatch").textContent = `${hrs}:${mins}:${secs}.${ms}`;
 }
 
-function startTimer() {
+function startStopWatch() {
   startTime = Date.now() - elapsed;
   interval = setInterval(() => {
     elapsed = Date.now() - startTime;
@@ -19,7 +19,7 @@ function startTimer() {
   }, 10);
 }
 
-function stopTimer() {
+function pauseStopWatch() {
   clearInterval(interval);
   interval = null;
 }
@@ -31,16 +31,18 @@ startButton.addEventListener("click", () => {
   if (!interval) {
     startButton.textContent = "Stop";
     startButton.style.backgroundColor = "lightcoral";
-    startTimer();
+    startStopWatch();
   } else {
     startButton.textContent = "Start";
     startButton.style.backgroundColor = "#bbccd0";
-    stopTimer();
+    pauseStopWatch();
   }
 });
 
 resetButton.addEventListener("click", () => {
-  stopTimer();
+  pauseStopWatch();
+
+  // reset กลับเป็น 0
   elapsed = 0;
   updateDisplay();
   startButton.textContent = "Start";
