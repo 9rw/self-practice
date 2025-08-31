@@ -1,0 +1,11 @@
+Week 4 - Linked List & Browser History Navigation
+
+รายละเอียด:
+- สร้างคลาส PageNode เพื่อเก็บข้อมูลของหน้าเว็บ (url) พร้อมลิงก์ไปยังหน้า prev และ next
+- สร้างคลาส BrowserHistory เพื่อจัดการประวัติการเข้าชมเว็บในรูปแบบ Doubly Linked List
+- เพิ่มเมธอด visitPage(url) back() และ forward() เพื่อให้สามารถเข้าชมหน้าใหม่ ย้อนกลับ และไปข้างหน้าได้ตามลำดับ
+
+Reflect:
+- เข้าใจโครงสร้างของ Doubly Linked List มากยิ่งขึ้น โดยเห็นภาพชัดเจนจากการใช้ prev และ next ใน PageNode
+- ฝึกการออกแบบ Object-Oriented Programming โดยแยกการทำงานออกเป็นคลาส PageNode และ BrowserHistory
+- ได้เรียนรู้การวางโครงสร้างข้อมูลที่ช่วยให้สามารถเข้าถึงและอัปเดตได้อย่างมีประสิทธิภาพ (ไม่ต้องวนลูปทั้งหมดเหมือน Array)
